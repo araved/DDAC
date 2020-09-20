@@ -27,7 +27,7 @@ namespace WebApplication2
             var databaseName = "epro-cosmo-db";
             var connectionString =
                 "AccountEndpoint=https://epro-cosmo-db.documents.azure.com:443/;AccountKey=QNMbwwCue0beRQovlFGPkFZRkSKmiC1UAnLw3xHIfjRcvq8vbT9DZcRSe2eohYWHGUFWDH7f5fozOupHAArQ7Q==;";
-            var client = new CosmosClient(connectionString);
+            CosmosClient client = new CosmosClient(connectionString: "eProAcademyCosmosDB");
             Database database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
             Container container = await database.CreateContainerIfNotExistsAsync(
                 "Result", "/result", 400);

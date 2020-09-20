@@ -15,7 +15,7 @@ namespace WebApplication2
          string containerName = "Result";
         static string connectionString =
             "AccountEndpoint=https://epro-cosmo-db.documents.azure.com:443/;AccountKey=QNMbwwCue0beRQovlFGPkFZRkSKmiC1UAnLw3xHIfjRcvq8vbT9DZcRSe2eohYWHGUFWDH7f5fozOupHAArQ7Q==;";
-        CosmosClient client = new CosmosClient(connectionString);
+        CosmosClient client = new CosmosClient(connectionString:"eProAcademyCosmosDB");
         protected void Page_Load(object sender, EventArgs e)
         {
 

@@ -14,11 +14,11 @@ namespace WebApplication2
         protected void Page_Load(object sender, EventArgs e)
         {
             var connectionString =
-                "DefaultEndpointsProtocol=https;AccountName=eprostorage;AccountKey=l7ys22jEl41uNxioYpYWflYYwia8nVSStDb4SkjSTftU1wxHLvwnLOmOx1D9tiFo/gknyKWPV+i9WUWPPQBRrA==;EndpointSuffix=core.windows.net";
+                "DefaultEndpointsProtocol=https;AccountName=eproacademy;AccountKey=hPxSJNEtHjXGHDSdCk8KLrAUm1kYnKV0LaMS1nrdCZdQJkWCu/RR9CJCwbqNJV3wM34NZ4t79nSP73Q8+xPb4w==;EndpointSuffix=core.windows.net";
 
             try
             {
-                var container = new BlobContainerClient(connectionString, "epro-video-repo");
+                var container = new BlobContainerClient(connectionString:"eProAcademyStorage", "epro-video-repo");
                 
 
                 foreach (BlobItem blobItem in container.GetBlobs())
