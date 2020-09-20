@@ -28,7 +28,7 @@ namespace WebApplication2
             try
             {
                
-                var container = new BlobContainerClient(connectionString:"eProAcademyStorage", "epro-video-repo");
+                var container = new BlobContainerClient(connectionString, "epro-video-repo");
                 container.CreateIfNotExists();
                 var file = file_upload.PostedFile;
                 var blob = container.GetBlobClient(file.FileName);

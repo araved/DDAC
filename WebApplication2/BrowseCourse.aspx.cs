@@ -18,7 +18,7 @@ namespace WebApplication2
 
             try
             {
-                var container = new BlobContainerClient(connectionString:"eProAcademyStorage", "epro-video-repo");
+                var container = new BlobContainerClient(connectionString, "epro-video-repo");
                 
 
                 foreach (BlobItem blobItem in container.GetBlobs())
