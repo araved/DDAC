@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UContact.aspx.cs" Inherits="WebApplication2.UContact" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UContact.aspx.cs" Inherits="WebApplication2.UContact" Async="true"%>
 
 <!DOCTYPE html>
 
@@ -122,7 +122,7 @@
         <div class ="form-group"> 
                     <div class ="col-md-2 "> </div>
                     <div class ="col-md-6 ">
-                        <asp:Label ID="lblError" CssClass="text-danger" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="lblError" CssClass="text-danger" runat="server"></asp:Label>
 
                   
                     </div>

@@ -13,7 +13,11 @@ namespace WebApplication2
     public partial class UContact : System.Web.UI.Page
     
     {
-        
+        string databaseName = "ContactUs";
+        string containerName = "Result";
+        static string connectionString =
+            "AccountEndpoint=https://eprocosmosdb.documents.azure.com:443/;AccountKey=95g4GwT0DrlQMuvahjNAccgfpCyyCtJ6sJoBdjeh7sck3X1sn70JoShHWmFhQwsJCibvwP27LoLH9BhecUNhEg==;";
+        CosmosClient client = new CosmosClient(connectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,22 +31,31 @@ namespace WebApplication2
 
         private  async Task InputData()
         {
-           
-            var databaseName = "epro-cosmo-db";
-            string containerName = "Result";
-            var connectionString =
-                "AccountEndpoint=https://eprocosmosdb.documents.azure.com:443/;AccountKey=95g4GwT0DrlQMuvahjNAccgfpCyyCtJ6sJoBdjeh7sck3X1sn70JoShHWmFhQwsJCibvwP27LoLH9BhecUNhEg==;";
-            CosmosClient client = new CosmosClient(connectionString);
-            Database database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
-            Container container = await database.CreateContainerIfNotExistsAsync(containerName, "/name");
+            Database _database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
+            Container _container = await _database.CreateContainerIfNotExistsAsync(containerName, "/name");
+            var contactUs = new contactus
+            {
+                id = Guid.NewGuid().ToString(),
+                name = txtname.Text,
+                enquiry = DDLRT.SelectedValue,
+                message = txtmessage.Text
+            };
+            ItemResponse<contactus> contactusResponse =
+                await _container.CreateItemAsync<contactus>(contactUs, new PartitionKey(contactUs.name));
 
-            dynamic result = new {id = Guid.NewGuid().ToString(), partitionkeyPath = DDLRT.SelectedValue, name = txtname.Text, message = txtmessage.Text};
-            ItemResponse<dynamic> response = await container.CreateItemAsync(result);
+            lblError.Text = "Thank you for your enquiry!";
+            lblError.ForeColor = System.Drawing.Color.Green;
+            clr();
         }
         protected void btnlogout_Click(object sender, EventArgs e)
         {
             Session["Username"] = null;
             Response.Redirect("~/SignIn.aspx");
+        }
+        public void clr()
+        {
+            txtname.Text = string.Empty;
+            txtmessage.Text = string.Empty;
         }
     }
 }
