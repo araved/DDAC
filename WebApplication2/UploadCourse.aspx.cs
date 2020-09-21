@@ -33,11 +33,11 @@ namespace WebApplication2
                 var container = new BlobContainerClient(connectionString, "epro-video-repo");
                 var file = file_upload.PostedFile;
                 var blob = container.GetBlobClient(file.FileName);
-                file.SaveAs(Server.MapPath("~/temp/") + file.FileName); 
+                file.SaveAs("/temp/" + file.FileName); 
                  using (Stream upload = File.OpenRead("temp/" + file.FileName))
                  {
                      blob.Upload(upload);
-                     File.Delete(Server.MapPath("~/temp/")+file.FileName);
+                     File.Delete("/temp/"+file.FileName);
                      uploadStatus.Text = "Upload Successful!";
                  }
 
