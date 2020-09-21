@@ -14,7 +14,7 @@ namespace WebApplication2
         string databaseName = "ContactUs";
          string containerName = "Result";
         static string connectionString =
-            "AccountEndpoint=https://eprocosmosdb.documents.azure.com:443/;AccountKey=95g4GwT0DrlQMuvahjNAccgfpCyyCtJ6sJoBdjeh7sck3X1sn70JoShHWmFhQwsJCibvwP27LoLH9BhecUNhEg==;";
+            "AccountEndpoint=https://eprocosmosdb.documents.azure.com:443/;AccountKey=0SgyNINhcN04tm2iymvnMn3D9hsJv2MWVYcqL9JS9FGEhEPOZTNOs9QUU5u8zsJCktoxdnUWnOGnLZugpqsnnA==;";
         CosmosClient client = new CosmosClient(connectionString);
         protected void Page_Load(object sender, EventArgs e)
         {

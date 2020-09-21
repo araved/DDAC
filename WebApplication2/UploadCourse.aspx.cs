@@ -26,7 +26,7 @@ namespace WebApplication2
         {
 
             var connectionString =
-                "DefaultEndpointsProtocol=https;AccountName=eproacademystorage;AccountKey=QEcZsQMZ4al2cQa4vXfkFS8KzywVTCdtI5gXBHmoNegwFvCPSNFXRMKLK0Eb0fxUgZnumWqjRpjaI+lrH7YbsQ==;EndpointSuffix=core.windows.net";
+                "DefaultEndpointsProtocol=https;AccountName=eproacademystorage;AccountKey=UstVl7rHTb9fYytuu9VwwZOkofuUrFjiv2EBq8bMTfnRopvOxIxfFURHe2XmqMiEXCu4H8xmEUHfwSPhS1b7Rw==;EndpointSuffix=core.windows.net";
             try
             {
                
