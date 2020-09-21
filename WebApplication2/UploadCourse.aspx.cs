@@ -34,7 +34,7 @@ namespace WebApplication2
                 var file = file_upload.PostedFile;
                 var blob = container.GetBlobClient(file.FileName);
                 file.SaveAs(System.Web.Hosting.HostingEnvironment.MapPath("/temp") + file.FileName); 
-                 using (Stream upload = File.OpenRead(Server.MapPath("temp/") + file.FileName))
+                 using (Stream upload = File.OpenRead(System.Web.Hosting.HostingEnvironment.MapPath("/temp") + file.FileName))
                  {
                      blob.Upload(upload);
                      File.Delete(System.Web.Hosting.HostingEnvironment.MapPath("/temp")+file.FileName);
