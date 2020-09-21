@@ -1,8 +1,10 @@
 using System;
+using System.Configuration;
 using System.IO;
 using System.Web;
 using System.Web.UI;
 using Azure.Storage.Blobs;
+using Microsoft.Azure.Cosmos.Table;
 
 
 namespace WebApplication2
@@ -24,12 +26,11 @@ namespace WebApplication2
         {
 
             var connectionString =
-                "DefaultEndpointsProtocol=https;AccountName=eproacademy;AccountKey=hPxSJNEtHjXGHDSdCk8KLrAUm1kYnKV0LaMS1nrdCZdQJkWCu/RR9CJCwbqNJV3wM34NZ4t79nSP73Q8+xPb4w==;EndpointSuffix=core.windows.net";
+                "DefaultEndpointsProtocol=https;AccountName=eproacademystorage;AccountKey=QEcZsQMZ4al2cQa4vXfkFS8KzywVTCdtI5gXBHmoNegwFvCPSNFXRMKLK0Eb0fxUgZnumWqjRpjaI+lrH7YbsQ==;EndpointSuffix=core.windows.net";
             try
             {
                
                 var container = new BlobContainerClient(connectionString, "epro-video-repo");
-                container.CreateIfNotExists();
                 var file = file_upload.PostedFile;
                 var blob = container.GetBlobClient(file.FileName);
                 file.SaveAs("temp/" + file.FileName); 

@@ -14,7 +14,7 @@ namespace WebApplication2
         protected void Page_Load(object sender, EventArgs e)
         {
             var connectionString =
-                "DefaultEndpointsProtocol=https;AccountName=eproacademy;AccountKey=hPxSJNEtHjXGHDSdCk8KLrAUm1kYnKV0LaMS1nrdCZdQJkWCu/RR9CJCwbqNJV3wM34NZ4t79nSP73Q8+xPb4w==;EndpointSuffix=core.windows.net";
+                "DefaultEndpointsProtocol=https;AccountName=eproacademystorage;AccountKey=QEcZsQMZ4al2cQa4vXfkFS8KzywVTCdtI5gXBHmoNegwFvCPSNFXRMKLK0Eb0fxUgZnumWqjRpjaI+lrH7YbsQ==;EndpointSuffix=core.windows.net";
             try
             {
                 var container = new BlobContainerClient(connectionString, "epro-video-repo");
