@@ -37,7 +37,6 @@ namespace WebApplication2
                  using (Stream upload = File.OpenRead(System.Web.Hosting.HostingEnvironment.MapPath("/temp") + file.FileName))
                  {
                      blob.Upload(upload);
-                     File.Delete(System.Web.Hosting.HostingEnvironment.MapPath("/temp")+file.FileName);
                      uploadStatus.Text = "Upload Successful!";
                  }
 
