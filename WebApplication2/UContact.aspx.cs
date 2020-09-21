@@ -6,11 +6,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.Azure.Cosmos;
-
 namespace WebApplication2
+
 {
+    
     public partial class UContact : System.Web.UI.Page
+    
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,6 +21,7 @@ namespace WebApplication2
 
         protected async void  btnSend_Click(object sender, EventArgs e)
         {
+            
            await InputData();
         }
 

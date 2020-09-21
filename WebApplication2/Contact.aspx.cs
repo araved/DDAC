@@ -6,7 +6,7 @@ using Microsoft.Azure.Cosmos;
 
 namespace WebApplication2
 {
-    public partial class Contact : System.Web.UI.Page
+    public partial class Contact : webpage
     {
      
         
